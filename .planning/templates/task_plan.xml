@@ -1,0 +1,23 @@
+<plan>
+  <objective>
+    <!-- Brief, high-level goal of this plan -->
+  </objective>
+
+  <context>
+    <!-- Relevant context or constraints (e.g., linked to PROJECT.md or REQUIREMENTS.md) -->
+  </context>
+
+  <task type="auto">
+    <name><!-- Descriptive name of the task --></name>
+    <files><!-- Comma-separated list of files to be modified --></files>
+    <action>
+      <!-- Detailed description of the logic to implement -->
+    </action>
+    <verify>
+      <!-- Shell command to verify the change (e.g., `npm test`, `python script.py`) -->
+    </verify>
+    <done>
+      <!-- Checkbox or status indicator -->
+    </done>
+  </task>
+</plan>
