@@ -1,7 +1,7 @@
 # Current State
 
 **Status:** Completed (Session 2)
-**Current Task:** Self-Reflection & Process Improvement
+**Current Task:** Refine AGENTS.md (System Instructions & Memory Loops)
 **Latest Update:** 2024-05-24
 
 **Completed Actions:**
@@ -12,7 +12,6 @@
 *   [x] Created GSD foundation files (`PROJECT.md`, `REQUIREMENTS.md`, `ROADMAP.md`).
 *   [x] Created `STATE.md` (this file).
 *   [x] Created `.planning/templates/task_plan.xml`.
-*   [x] Created `AGENTS.md`.
 *   [x] Setup `/.private/jules/` workspace (persona, inbox).
 *   [x] Created `skills/create_skill/SKILL.md` template.
 *   [x] Documented DMCT and Context Engineering.
@@ -22,13 +21,13 @@
 *   [x] Generated `Session_Report.md`.
 *   [x] Initialized Session 2 (`.sessions/2/`).
 *   [x] Created `PRE_COMMIT.md` checklist.
-*   [x] Updated `AGENTS.md` with session lifecycle protocols.
 *   [x] Generated `.sessions/2/Session_Report.md`.
+*   [x] Substantially rewrote `AGENTS.md` to incorporate the Janus architecture, Context Engineering, Episodic Memory Loops, and human-collaboration directives based on Session 1 sources.
 
 **Pending:**
-*   [ ] Initialize Session 3 (DMCT Implementation).
+*   [ ] Initialize Session 3 (DMCT Implementation & Token Digests).
 
 **Blockers:**
 *   None.
 
-**Focus:** Improving autonomous session management and enforcing pre-commit checks.
+**Focus:** Establishing a robust, self-documenting, and learning-capable System 2 orchestrator.
