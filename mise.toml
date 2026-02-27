@@ -32,3 +32,17 @@ run = "repomix --config repomix.config.json"
 [tasks.gemini]
 description = "Delegiert Sub-Tasks an Gemini"
 run = "gemini"
+description = "Installs all language-specific dependencies and tools."
+run = "npm install && pip install -r requirements.txt"
+
+[tasks.context]
+description = "Generates a compressed L1 AST snapshot of the repository for the Planner."
+run = "repomix --config repomix.config.json"
+
+[tasks.test]
+description = "Executes the global verification suite to validate agent code."
+run = "npm run test"
+
+[tasks.lint]
+description = "Performs static analysis and type checking."
+run = "npm run lint && tsc --noEmit"
