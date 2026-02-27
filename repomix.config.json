@@ -1,0 +1,17 @@
+{
+  "output": {
+    "format": "xml",
+    "filePath": ".planning/context_digest.xml",
+    "compress": true,
+    "includeGitLogs": true,
+    "gitLogsCount": 10
+  },
+  "security": {
+    "enableSecretlint": true,
+    "preventCredentialLeakage": true
+  },
+  "filters": {
+    "include": ["src/**/*.ts", "src/**/*.py", "docs/*.md"],
+    "ignore": ["node_modules/", "dist/", "build/", ".env*", "**/*.test.ts"]
+  }
+}
