@@ -26,7 +26,18 @@
 *   **Context Engineering:** Use hierarchical digests (L0, L1) to navigate large codebases efficiently.
 *   **DMCT Protocol:** When delegating to System 1 (Gemini-CLI), enforce validation via executable code, not just text.
 
-## 4. Navigation & Context
+## 4. Session Lifecycle & Pre-Commit Protocol
+*   **Start of Session:**
+    1.  Initialize `.sessions/<N>/` directory with `sources/` subdirectory.
+    2.  Create `.sessions/<N>/README.md`, `Jules.md`, and `user.md`.
+    3.  Review `PRE_COMMIT.md` to refresh memory on requirements.
+*   **End of Session:**
+    1.  Update `STATE.md` to reflect the session's completion and achievements.
+    2.  Generate `Session_Report.md`.
+    3.  Run `cat PRE_COMMIT.md` and verify all items are checked.
+    4.  **ONLY THEN** call the `submit` tool.
+
+## 5. Navigation & Context
 *   **Session Roots:** `.sessions/` contains all history.
 *   **Current Session:** `.sessions/<id>/` contains context for the current task.
 *   **Source Materials:** `.sessions/<id>/sources/` contains immutable input docs.
