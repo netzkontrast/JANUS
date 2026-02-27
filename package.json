@@ -1,0 +1,16 @@
+{
+  "name": "greenfield-bootstrapping",
+  "version": "1.0.0",
+  "description": "Greenfield bootstrapping for Google Jules environment",
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0",
+    "lint": "echo \"No linting configured yet\"",
+    "context": "npx repomix --config repomix.config.json"
+  },
+  "keywords": [],
+  "author": "Google Jules",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

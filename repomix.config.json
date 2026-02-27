@@ -1,0 +1,28 @@
+{
+  "output": {
+    "format": "xml",
+    "filePath": ".planning/context_digest.xml",
+    "compress": true,
+    "includeGitLogs": true,
+    "gitLogsCount": 10
+  },
+  "security": {
+    "enableSecretlint": true,
+    "preventCredentialLeakage": true
+  },
+  "include": [
+    "**/*"
+  ],
+  "ignore": {
+    "useGitignore": true,
+    "useDefaultPatterns": true,
+    "customPatterns": [
+      ".git",
+      "node_modules",
+      "package-lock.json",
+      "bun.lockb",
+      "dist/",
+      "build/"
+    ]
+  }
+}
