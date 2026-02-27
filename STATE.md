@@ -11,7 +11,6 @@
 *   [x] Documented Agent Skills knowledge.
 *   [x] Created GSD foundation files (`PROJECT.md`, `REQUIREMENTS.md`, `ROADMAP.md`).
 *   [x] Created `.planning/templates/task_plan.xml`.
-*   [x] Created `AGENTS.md`.
 *   [x] Setup `/.private/jules/` workspace (persona, inbox).
 *   [x] Created `skills/create_skill/SKILL.md` template.
 *   [x] Documented DMCT and Context Engineering.
