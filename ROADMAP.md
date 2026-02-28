@@ -11,17 +11,17 @@
     *   [ ] Skills template created.
     *   [ ] Initial documentation written.
 
-**Q2 2024: Phase 2 - Core Capabilities**
-*   **Goal:** Enable autonomous validation and context management.
+**Q2 2024: Phase 2 - Core Capabilities (Ouroboros Scaffold)**
+*   **Goal:** Enable persistent, durable execution and self-updating mechanics on Vercel.
 *   **Planned:**
-    *   Implementation of DMCT scripts.
-    *   Implementation of Context Engineering tools (L0/L1 digests).
-    *   Integration of `mise` for deterministic task execution.
+    *   Initialize TinyClaw swarm roles (Observer, Architect, Verifier).
+    *   Set up durable orchestration with Vercel Workflows.
+    *   Configure Vercel Sandboxes for execution isolation.
+    *   Implement MCP interface for System 2 (Jules) interactions.
 
 **Q3 2024: Phase 3 - Autonomous Operation**
-*   **Goal:** Full System 2 (Jules) / System 1 (Gemini) orchestration.
+*   **Goal:** Full System 2 (Jules) / System 1 (TinyClaw) orchestration for self-updating.
 *   **Planned:**
-    *   [ ] Session 6: ZeroClaw Integration & First Meso-Loop (Self-Evaluation).
-    *   Automated session consolidation (Macro loop).
-    *   Self-improving skills via `.sessions/` analysis.
-    *   Dynamic personality adaptation (dialectic evolution via ZeroClaw).
+    *   Automated CI/CD loop (Ground Truth validation of PRs).
+    *   Context compaction pipeline (L0/L1/L2 digests) running via scheduled workflows.
+    *   Temporal decay of episodic memory in `.sessions/`.

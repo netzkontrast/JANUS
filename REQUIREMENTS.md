@@ -20,11 +20,13 @@
     *   [x] Document DMCT protocol (draft).
     *   [x] Document Hierarchical Digests concept.
 
-## Phase 2: Core Capabilities (Planned)
-*   **DMCT Implementation:** Build the actual scripts/skills for context tailoring.
-*   **Context Engineering:** Implement L0/L1 digest generators.
-*   **Testing Infrastructure:** Set up `mise` tasks for testing.
+## Phase 2: Core Capabilities & Ouroboros Setup
+*   **Vercel Workflow DevKit Integration:** Setup durable execution for the agentic loop.
+*   **Vercel Sandbox Provisioning:** Setup secure microVM environments for executing CodeAct testing loops.
+*   **MCP Integration:** Create an interface to seamlessly communicate with the Jules MCP server for architectural updates.
+*   **TinyClaw Initialization:** Scaffold the TypeScript framework for the System 1 agent swarm (Observer, Architect, Verifier).
 
 ## Phase 3: Autonomous Cycles (Future)
 *   **Macro-Loop:** Implement archival logic after 10 sessions.
-*   **Meso-Loop (Session 6):** Integrate ZeroClaw (from zeroclaw-labs/zeroclaw) as the dialectic counterpart to Jules. Establish the framework for the 5-session self-evaluation review.
+*   **Meso-Loop:** Self-evaluation reviews and temporal decay memory pruning.
+*   **Continuous Self-Deployment Loop:** Automate the complete GSD lifecycle from logging a fault to PR deployment and ground-truth validation.
