@@ -5,6 +5,7 @@
 node = "22.16.0"
 python = "3.12.11"
 "npm:repomix" = "latest"
+"npm:@google/gemini-cli" = "latest"
 
 # 2. Environment Variables (Automatically injected into all AI tasks)
 [env]
@@ -13,6 +14,24 @@ LOG_LEVEL = "debug"
 
 # 3. Universal GSD Task Interfaces
 [tasks.setup]
+description = "Installiert alle sprachspezifischen Abhängigkeiten"
+run = "npm install"
+
+[tasks.test]
+description = "Führt die globale Test-Suite aus"
+run = "npm run test"
+
+[tasks.lint]
+description = "Code-Qualitätsprüfung und statische Analyse"
+run = "npm run lint && tsc --noEmit"
+
+[tasks.context]
+description = "Generiert einen Architektur-Snapshot via Repomix"
+run = "repomix --config repomix.config.json"
+
+[tasks.gemini]
+description = "Delegiert Sub-Tasks an Gemini"
+run = "gemini"
 description = "Installs all language-specific dependencies and tools."
 run = "npm install && pip install -r requirements.txt"
 

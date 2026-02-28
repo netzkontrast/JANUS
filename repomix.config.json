@@ -10,6 +10,20 @@
     "enableSecretlint": true,
     "preventCredentialLeakage": true
   },
+  "include": [
+    "**/*"
+  ],
+  "ignore": {
+    "useGitignore": true,
+    "useDefaultPatterns": true,
+    "customPatterns": [
+      ".git",
+      "node_modules",
+      "package-lock.json",
+      "bun.lockb",
+      "dist/",
+      "build/"
+    ]
   "filters": {
     "include": ["src/**/*.ts", "src/**/*.py", "docs/*.md"],
     "ignore": ["node_modules/", "dist/", "build/", ".env*", "**/*.test.ts"]
