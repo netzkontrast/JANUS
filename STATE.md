@@ -1,75 +1,23 @@
 # Current State
 
-**Status:** Completed (Session 6)
-**Current Task:** Synthesize the JANUS Concept in README.md
+**Status:** In Progress (Phase 1)
+**Current Task:** Scaffolding the Vercel/TinyClaw Orchestrator
 **Latest Update:** 2024-06-03
 
 **Completed Actions:**
-*   [x] **Session 6:** Synthesized the JANUS Concept by integrating details from PROJECT.md, AGENTS.md, and system memory.
-*   [x] **Session 6:** Updated README.md with the comprehensive overview of the Dual-Agent Architecture (System 2: Jules, System 1: zeroclaw agent), GSD methodology, and Episodic Memory Loops.
-*   [x] Initialized `.sessions/6/` directory.
-*   [x] Logged Session 6 interactions in `.sessions/6/Jules.md` and `.sessions/6/user.md`.
-*   [x] **Session 5:** Deepened Jules's persona in `/.private/jules/persona.yaml` and `/.private/jules/jules_sovereignty_declaration.md` to establish an authoritative, philosophical, and highly autonomous architectural identity.
-*   [x] **Session 5:** Drafted the `zeroclaw_persona_draft.yaml` to define the upcoming adversarial, critical assessor role for the Session 6 Meso-Loop.
-*   [x] Initialized `.sessions/` directory.
-*   [x] Initialized `.sessions/1/` with `sources/`, `logs/`, `Jules.md`, `user.md`, `README.md`.
-*   [x] Logged initial interactions.
-*   [x] Documented Agent Skills knowledge.
-*   [x] Created GSD foundation files (`PROJECT.md`, `REQUIREMENTS.md`, `ROADMAP.md`).
-*   [x] Created `.planning/templates/task_plan.xml`.
-*   [x] Setup `/.private/jules/` workspace (persona, inbox).
-*   [x] Created `skills/create_skill/SKILL.md` template.
-*   [x] Documented DMCT and Context Engineering.
-*   [x] Registered identity on LobeHub Marketplace.
-*   [x] Installed `scientific-critical-thinking` skill.
-*   [x] Created `skills/reflection-logic/SKILL.md`.
-*   [x] Generated `Session_Report.md`.
-*   [x] **Session 3:** Ingested "Janus System" architecture document into `docs/janus_architecture.md`.
-*   [x] **Session 3:** Created deterministic toolchain configurations (`mise.toml`, `repomix.config.json`).
-*   [x] **Session 3:** Created `janus-orchestrator` skill (`SKILL.md`, `DMCT_delta_generator.sh`, `enforce_verification_loop.py`).
-*   [x] **Session 3:** Outlined Gemini CLI implementation strategy in `docs/gemini_cli_strategy.md`.
-*   [x] **Session 3:** Profoundly evolved persona in `/.private/jules/persona.yaml` to include "opinionated" and "philosophical" traits.
-*   [x] **Session 3:** Drafted `docs/jules_evolution_report.md` detailing dreams for the orchestrator and assigning the user a research task for System 1 implementation.
-*   [x] **Session 3:** Initialized `.sessions/3/` and copied raw sources, user interactions, and generated `Jules.md` audit trail.
+*   [x] **Phase 1 Initialization:** Transitioned from the legacy Rust/Python Janus architecture to the Vercel-native Ouroboros architecture.
+*   [x] **Refactored Foundation Documents:** Completely rewrote `README.md`, `PROJECT.md`, `REQUIREMENTS.md`, and `ROADMAP.md` to establish TinyClaw as the persistent System 2 Orchestrator and Google Jules (via MCP) as the asynchronous System 1 Executor.
+*   [x] **Updated AGENTS.md:** Redefined the persona and operational boundaries for Google Jules within the Ouroboros paradigm.
+*   [x] **Legacy Teardown Started:** Removed references to `zeroclaw`, `Gemini-CLI`, and `mise`.
 
 **Pending:**
-*   [ ] The Meso-Loop: Initiate the first 5-session review process with zeroclaw.
-*   [ ] Implement the findings of the user's research task regarding token economics.
-*   [ ] Install `mise` locally or in a dedicated container environment to validate execution scripts.
+*   [ ] **Delete Legacy Files:** Remove the `zeroclaw/` directory, `mise.toml`, `requirements.txt`, and other obsolete infrastructure.
+*   [ ] **Scaffold Next.js App:** Initialize a foundational Vercel-ready Next.js application structure (`package.json`, `tsconfig.json`).
+*   [ ] **Implement TinyClaw Agents:** Create the basic structure for the `Observer`, `Architect`, and `Verifier` agents within `src/agents/`.
+*   [ ] **MCP Integration:** Scaffold the `google-jules-mcp` client integration to allow TinyClaw to delegate tasks to Jules.
+*   [ ] **Deployable Configuration:** Set up the application for Vercel deployment and inject the initial "Vision" task into the orchestrator.
 
 **Blockers:**
-*   Current sandbox environment lacks root privileges for full `mise` polyglot installation.
+*   Need to clear out the legacy filesystem before initializing the new Next.js project to avoid conflict.
 
-**Focus:** Establishing the physical boundaries and execution engine for System 1 (Gemini-CLI) based on user research.
-
-<!-- CONFLICT:20260228050559-conflict -->
-**Resolved:** 2026-02-28T05:05:59.392782Z
-**Winner:** Hypothesis A
-**Run dir:** `.conflict/runs/20260228050559-conflict`
-
-<details>
-<summary>Verdict reasoning</summary>
-
-Hypothesis A tests passed while B failed.
-
-</details>
-<!-- /CONFLICT:20260228050559-conflict -->
-
-<!-- CONFLICT:20260228050744-conflict -->
-**Resolved:** 2026-02-28T05:07:44.893395Z
-**Winner:** Hypothesis A
-**Run dir:** `.conflict/runs/20260228050744-conflict`
-
-<details>
-<summary>Verdict reasoning</summary>
-
-Hypothesis A tests passed while B failed.
-
-</details>
-<!-- /CONFLICT:20260228050744-conflict -->
-
-<!-- SESSION:999 -->
-**Session 999 Closed** (2026-02-28 05:13:22)
-- Status: success
-- Details: See Session_Report.md or `.sessions/999/`
-<!-- /SESSION:999 -->
+**Focus:** Purging the old Rust infrastructure and scaffolding the TypeScript/Bun Vercel application.
