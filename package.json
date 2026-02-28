@@ -4,13 +4,14 @@
   "description": "Greenfield bootstrapping for Google Jules environment",
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
-    "lint": "echo \"No linting configured yet\"",
+    "lint": "npx tsc --noEmit",
     "context": "npx repomix --config repomix.config.json"
   },
   "keywords": [],
   "author": "Google Jules",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^5.0.0"
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3"
   }
 }

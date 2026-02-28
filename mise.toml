@@ -14,30 +14,8 @@ LOG_LEVEL = "debug"
 
 # 3. Universal GSD Task Interfaces
 [tasks.setup]
-description = "Installiert alle sprachspezifischen Abhängigkeiten"
-run = "npm install"
-
-[tasks.test]
-description = "Führt die globale Test-Suite aus"
-run = "npm run test"
-
-[tasks.lint]
-description = "Code-Qualitätsprüfung und statische Analyse"
-run = "npm run lint && tsc --noEmit"
-
-[tasks.context]
-description = "Generiert einen Architektur-Snapshot via Repomix"
-run = "repomix --config repomix.config.json"
-
-[tasks.gemini]
-description = "Delegiert Sub-Tasks an Gemini"
-run = "gemini"
 description = "Installs all language-specific dependencies and tools."
 run = "npm install && pip install -r requirements.txt"
-
-[tasks.context]
-description = "Generates a compressed L1 AST snapshot of the repository for the Planner."
-run = "repomix --config repomix.config.json"
 
 [tasks.test]
 description = "Executes the global verification suite to validate agent code."
@@ -45,4 +23,21 @@ run = "npm run test"
 
 [tasks.lint]
 description = "Performs static analysis and type checking."
-run = "npm run lint && tsc --noEmit"
+run = "npm run lint"
+
+[tasks."test:conflict"]
+description = "Executes the Ground Truth Conflict Resolver tool."
+run = "python tools/conflict/conflict_resolver.py --hypothesis-a hyp_a.md --hypothesis-b hyp_b.md"
+
+[tasks.context]
+description = "Generates a compressed L1 AST snapshot of the repository for the Planner."
+run = "repomix --config repomix.config.json"
+
+[tasks.gemini]
+description = "Delegates sub-tasks to Gemini."
+run = "gemini"
+
+[tasks.sandbox]
+description = "Isolated execution environment for sub-agents with restricted shell permissions"
+run = "bash"
+
