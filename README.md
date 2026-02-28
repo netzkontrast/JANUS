@@ -1,48 +1,41 @@
-# JANUS: Dual-Agent Orchestration System
+# JANUS: The Ouroboros Architecture
 
-**Janus** is an autonomous, self-orchestrating software development environment designed for "Greenfield" projects. It leverages a dual-agent architecture (System 1 & System 2) to solve complex coding tasks with high reliability and minimal context decay.
+**Janus** is a persistent, self-updating autonomous software engineering ecosystem deployed on Vercel. It leverages the "Ouroboros" architecture to combine the durable, stateful execution of the **TinyClaw** framework with the immense, asynchronous cognitive power of **Google Jules**.
 
-The fundamental goal of Janus is to combat "Context Rot" through rigorous documentation, temporal structuring, and CodeAct-driven truth validation, using a strict "Get Shit Done" (GSD) methodology.
+The system is designed to fundamentally solve "Context Rot" and the fragility of monolithic AI agents by adopting "Functional Multiplicity" — orchestrating specialized sub-agents across isolated cloud environments.
 
 ---
 
-## 1. Cognitive Dualism (The Janus Architecture)
+## 1. Cognitive Dualism & Functional Multiplicity
 
-At the core of the project lies the dual-agent interplay:
+Janus abandons the brittle, single-agent paradigm in favor of a specialized swarm:
 
-*   **System 2 (Jules): The Slow-Thinking Orchestrator**
-    Jules is deliberate, reflexive, and strategic. Operating asynchronously, Jules’ primary responsibility is maintaining the global architecture, managing the system's state (`STATE.md`, `ROADMAP.md`), and orchestrating complex plans. Jules governs the environment and does not rush into writing code.
-*   **System 1 (zeroclaw agent): The Fast-Thinking Executor**
-    Replacing the legacy Gemini-CLI, `zeroclaw` acts as the reactive sub-agent infrastructure written in Rust. System 1 is instantiated for fast, isolated, parallel execution and experimental tasks. It operates in a "YOLO" mode, generating code, running tests, and validating hypotheses through compiler output (CodeAct), protecting the main context from irrelevant noise.
+*   **System 2 (TinyClaw on Vercel): The Persistent Orchestrator**
+    The core application runs continuously on Vercel, utilizing Vercel Workflows for durable execution. It monitors the environment, maintains the long-term knowledge hypergraph (L0/L1/L2 digests), and defines macroscopic objectives. It does *not* write complex code itself.
+*   **System 1 (Google Jules via MCP): The Asynchronous Executor**
+    When TinyClaw determines a structural update or complex refactoring is required, it delegates the task programmatically to Google Jules via the Model Context Protocol (MCP). Jules spins up an isolated Google Cloud VM, clones the repository, executes the task, tests the code, and submits a Pull Request back to the main repository.
 
 ## 2. The GSD Externalized Memory Graph
 
-To prevent hallucinations and context overload, Janus externalizes its memory into a strict Markdown graph:
+To maintain absolute coherence across ephemeral serverless executions, Janus relies on a strict externalized memory structure:
 
-*   **`PROJECT.md`:** The fundamental, mostly immutable vision and architectural constraints.
-*   **`REQUIREMENTS.md`:** The detailed, hierarchical list of functional requirements.
-*   **`ROADMAP.md`:** The macroscopic timeline of phases and milestones.
-*   **`STATE.md`:** Dynamic short-term memory, updated at the end of every session. It documents immediate progress, decisions, and blockers.
-*   **`.planning/`:** A directory where all execution plans are meticulously drafted using the `task_plan.xml` template before any code is executed.
+*   **`PROJECT.md`:** The fundamental, immutable vision and architectural constraints (The Ouroboros Paradigm).
+*   **`REQUIREMENTS.md`:** The detailed, hierarchical list of functional system requirements.
+*   **`ROADMAP.md`:** The macroscopic timeline of evolutionary phases and milestones.
+*   **`STATE.md`:** Dynamic short-term memory, updated continually by the TinyClaw Orchestrator. It documents active workflows, PR states, and blockers.
+*   **`.planning/`:** Execution plans drafted in `task_plan.xml` format.
 
-## 3. Episodic Memory & Learning Loops
+## 3. The Autonomous CI/CD Loop
 
-Janus governs the project over the dimension of time using specific learning rhythms to continuously self-improve:
+Janus evolves its own architecture through a deterministic four-phase lifecycle:
 
-1.  **Micro-Loop (Transactional - Every Session):** Every interaction, plan, and outcome is immutably logged in `.sessions/<id>/`. `STATE.md` is updated accordingly.
-2.  **Meso-Loop (Reflective - Every 5 Sessions):** An analytical review of the last 5 sessions to identify systemic friction points, hallucination patterns, or missing knowledge, which are then abstracted into learning documents.
-3.  **Macro-Loop (Archival - Every 10 Sessions):** Historical XML plans and obsolete state data are compressed and moved into an `/archive/` directory to prevent context poisoning.
+1.  **Diagnostic Observation:** TinyClaw (Observer Agent) continuously monitors logs and external inputs via Vercel Workflows.
+2.  **Delegation (Asynchronous Planning):** Upon identifying an issue or improvement, TinyClaw formulates a hypothesis and invokes `jules_create_task` via MCP. Jules analyzes the entire codebase in its VM and returns a structural execution plan.
+3.  **Execution & Ground Truth Validation:** TinyClaw reviews the plan (`jules_approve_plan`). Jules implements the code and opens a PR. Vercel automatically deploys a Preview URL. TinyClaw (Verifier Agent) spins up a Vercel Sandbox to run rigorous end-to-end tests against the preview.
+4.  **Integration:** If validation passes, TinyClaw autonomously merges the PR. Vercel deploys to Production, and the system awakens in its newly evolved state.
 
-## 4. Context Engineering & Dynamic Mutual Context Tailoring (DMCT)
+## 4. Why Vercel & TinyClaw?
 
-To combat Context Rot, Janus employs sophisticated context engineering:
-
-*   **Multi-Level Digests:** Using L0 (Abstract/Topology), L1 (Structural/Signatures), and L2 (Full Content) digests to locate relevant code efficiently without flooding the context window.
-*   **DMCT:** When Jules delegates to the `zeroclaw agent` (System 1), it tailors the context to send only the precise, minimal subset (L1/L2) required for the task.
-*   **Executable Validation (Ground Truth):** Conflicts in documentation or perspectives are resolved not by guessing, but by formulating hypotheses and instructing System 1 to write and execute a test script (`CodeAct`). Compiler and test outputs serve as the absolute truth.
-
-## 5. Human Collaboration & Research
-
-Janus is autonomous but recognizes its boundaries. It strategically engages the human user:
-*   **As a Sounding Board:** For subjective business decisions or major architectural forks.
-*   **For Deep Research:** When deep domain knowledge or specific API constraints fall outside of the repository's scope, Janus relies on human-provided context instead of hallucinating capabilities.
+*   **Vercel Workflows:** Provide "durable orchestration," allowing the agent to survive serverless timeouts and wait asynchronously for Jules to finish executing tasks in the cloud.
+*   **Vercel Sandboxes:** Firecracker microVMs that securely execute untrusted compilation scripts and validation tests without exposing the primary runtime.
+*   **TinyClaw (TypeScript/Bun):** Offers a native Vercel alignment, 4-layer context compaction (combating Context Rot), and a robust multi-agent swarm architecture out-of-the-box.
