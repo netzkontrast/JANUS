@@ -1,0 +1,3 @@
+- Explored codebase to find definitions of the JANUS Concept.
+- Synthesized understanding of System 1 (zeroclaw) and System 2 (Jules), GSD, and episodic memory loops.
+- Updated README.md with the synthesized JANUS Concept.
