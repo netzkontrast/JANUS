@@ -12,8 +12,8 @@ At the core of the project lies the dual-agent interplay:
 
 *   **System 2 (Jules): The Slow-Thinking Orchestrator**
     Jules is deliberate, reflexive, and strategic. Operating asynchronously, Jules’ primary responsibility is maintaining the global architecture, managing the system's state (`STATE.md`, `ROADMAP.md`), and orchestrating complex plans. Jules governs the environment and does not rush into writing code.
-*   **System 1 (zeroclaw agent): The Fast-Thinking Executor**
-    Replacing the legacy Gemini-CLI, `zeroclaw` acts as the reactive sub-agent infrastructure written in Rust. System 1 is instantiated for fast, isolated, parallel execution and experimental tasks. It operates in a "YOLO" mode, generating code, running tests, and validating hypotheses through compiler output (CodeAct), protecting the main context from irrelevant noise.
+*   **System 1 (zeroclaw): The Fast-Thinking Executor**
+    Replacing the legacy Gemini-CLI, `zeroclaw` acts as the reactive sub-agent infrastructure written in Rust. Operating with a <5MB memory footprint and <10ms startup latency, it provides memory-safe and deterministic execution. System 1 is instantiated for fast, isolated, parallel execution and experimental tasks. It operates in a "YOLO" mode, generating code, running tests, and validating hypotheses through compiler output (CodeAct), protecting the main context from irrelevant noise.
 
 ## 2. The GSD Externalized Memory Graph
 

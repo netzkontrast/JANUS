@@ -5,7 +5,6 @@
 node = "22.16.0"
 python = "3.12.11"
 "npm:repomix" = "latest"
-"npm:@google/gemini-cli" = "latest"
 
 # 2. Environment Variables (Automatically injected into all AI tasks)
 [env]
@@ -34,8 +33,8 @@ description = "Generates a compressed L1 AST snapshot of the repository for the 
 run = "repomix --config repomix.config.json"
 
 [tasks.gemini]
-description = "Delegates sub-tasks to Gemini."
-run = "gemini"
+description = "Delegates sub-tasks to zeroclaw."
+run = "zeroclaw"
 
 [tasks.sandbox]
 description = "Isolated execution environment for sub-agents with restricted shell permissions"
