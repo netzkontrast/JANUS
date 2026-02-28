@@ -1,10 +1,12 @@
 # Current State
 
-**Status:** Completed (Session 6)
-**Current Task:** Synthesize the JANUS Concept in README.md
-**Latest Update:** 2024-06-03
+**Status:** Completed (Session 7)
+**Current Task:** ZeroClaw Integration in `mise.toml` and Orchestrator Skill
+**Latest Update:** 2024-06-05
 
 **Completed Actions:**
+*   [x] **Session 7:** Updated `mise.toml` to replace gemini with rust and zeroclaw, configured to run natively and bypass Docker.
+*   [x] **Session 7:** Updated `skills/janus-orchestrator/SKILL.md` to delegate tasks to strict, parameterized ZeroClaw binaries running in WASM sandboxes.
 *   [x] **Session 6:** Synthesized the JANUS Concept by integrating details from PROJECT.md, AGENTS.md, and system memory.
 *   [x] **Session 6:** Updated README.md with the comprehensive overview of the Dual-Agent Architecture (System 2: Jules, System 1: zeroclaw agent), GSD methodology, and Episodic Memory Loops.
 *   [x] Initialized `.sessions/6/` directory.
