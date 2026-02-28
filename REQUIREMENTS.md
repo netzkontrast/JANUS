@@ -27,4 +27,4 @@
 
 ## Phase 3: Autonomous Cycles (Future)
 *   **Macro-Loop:** Implement archival logic after 10 sessions.
-*   **Meso-Loop:** Implement learning consolidation after 5 sessions.
+*   **Meso-Loop (Session 6):** Integrate ZeroClaw (from zeroclaw-labs/zeroclaw) as the dialectic counterpart to Jules. Establish the framework for the 5-session self-evaluation review.
