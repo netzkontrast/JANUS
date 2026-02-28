@@ -7,8 +7,7 @@
     "gitLogsCount": 10
   },
   "security": {
-    "enableSecretlint": true,
-    "preventCredentialLeakage": true
+    "enableSecretlint": true
   },
   "include": [
     "**/*"
@@ -24,8 +23,5 @@
       "dist/",
       "build/"
     ]
-  "filters": {
-    "include": ["src/**/*.ts", "src/**/*.py", "docs/*.md"],
-    "ignore": ["node_modules/", "dist/", "build/", ".env*", "**/*.test.ts"]
   }
 }
