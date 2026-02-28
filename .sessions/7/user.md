@@ -1,0 +1,3 @@
+Architectural Evaluation of Agentic Frameworks for the Janus Dual-Cognition System
+
+... User's research report detailing the architectural evaluation of AI agent frameworks, concluding that compiled memory-safe systems like ZeroClaw (Rust) or NullClaw (Zig) are superior to interpreted, Node.js or Python systems like Gemini-CLI. The report decisively recommends ZeroClaw for System 1 execution in the Janus project due to its <5MB memory footprint, <10ms startup time, OS-level sandbox integration, stateless execution via SQLite memory, and trait-driven monomorphization determinism.

@@ -19,9 +19,9 @@
     *   Integration of `mise` for deterministic task execution.
 
 **Q3 2024: Phase 3 - Autonomous Operation**
-*   **Goal:** Full System 2 (Jules) / System 1 (Gemini) orchestration.
+*   **Goal:** Full System 2 (Jules) / System 1 (zeroclaw) orchestration.
 *   **Planned:**
-    *   [ ] Session 6: ZeroClaw Integration & First Meso-Loop (Self-Evaluation).
+    *   [ ] Session 6: zeroclaw Integration & First Meso-Loop (Self-Evaluation).
     *   Automated session consolidation (Macro loop).
     *   Self-improving skills via `.sessions/` analysis.
     *   Dynamic personality adaptation (dialectic evolution via ZeroClaw).
