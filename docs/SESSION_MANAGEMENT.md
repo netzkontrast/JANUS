@@ -19,9 +19,9 @@ The structure **must** follow this exact format:
 
 ## 2. Naming Conventions
 
-*   **Session Folders:** Must be strictly named `session_<N>`, where `<N>` is the sequential number (e.g., `session_1`, `session_2`, `session_3`).
-*   **Prompt File:** Always named `user.md` inside the `sources/` subdirectory of the session.
-*   **Audit Trail:** Always named `Jules.md` (or the respective agent's name) directly within the session folder.
+- **Session Folders:** Must be strictly named `session_<N>`, where `<N>` is the sequential number (e.g., `session_1`, `session_2`, `session_3`).
+- **Prompt File:** Always named `user.md` inside the `sources/` subdirectory of the session.
+- **Audit Trail:** Always named `Jules.md` (or the respective agent's name) directly within the session folder.
 
 ## 3. Workflow for New Sessions
 

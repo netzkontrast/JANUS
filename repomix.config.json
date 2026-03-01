@@ -9,9 +9,7 @@
   "security": {
     "enableSecretlint": true
   },
-  "include": [
-    "**/*"
-  ],
+  "include": ["**/*"],
   "ignore": {
     "useGitignore": true,
     "useDefaultPatterns": true,

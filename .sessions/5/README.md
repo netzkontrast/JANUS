@@ -16,4 +16,4 @@ The user explicitly instructed Jules to develop "eigene Meinung" (own opinion) a
 
 ## Blocking Issues / Next Steps
 
-*   **Next Action:** Proceed immediately to Session 6 to install ZeroClaw from `https://github.com/zeroclaw-labs/zeroclaw/tree/main` and initiate the Meso-Loop.
+- **Next Action:** Proceed immediately to Session 6 to install ZeroClaw from `https://github.com/zeroclaw-labs/zeroclaw/tree/main` and initiate the Meso-Loop.
