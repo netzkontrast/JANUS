@@ -20,10 +20,10 @@ The antidote to the AEGIS failure mode is found in the protagonist's journey tow
 
 Translating this psychological framework into computational architecture yields the core thesis of the "Janus System." Drawing upon Daniel Kahneman's dual-process theory, the Janus System deliberately splits the AI workflow into two distinct cognitive modes :
 
-| Cognitive Mode | Component Entity | Characteristics and Function | Analogy in TSDP Model |
-| :--- | :--- | :--- | :--- |
-| **System 2 (Slow Thinking)** | **Google Jules (Orchestrator)** | Deliberative, state-aware, and asynchronous. Responsible for global architectural integrity, long-term planning, and managing the externalized knowledge graph. | The "Manager" / ANP (Apparently Normal Part) seeking stability. |
-| **System 1 (Fast Thinking)** | **Gemini-CLI (Sub-Agents)** | Reactive, exploratory, and highly localized. Instantiated dynamically to test hypotheses, run compiler loops, and query APIs in isolated sandboxes. | The "Executor" / EP (Emotional Part) reacting rapidly to immediate stimuli. |
+| Cognitive Mode               | Component Entity                | Characteristics and Function                                                                                                                                    | Analogy in TSDP Model                                                       |
+| :--------------------------- | :------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- |
+| **System 2 (Slow Thinking)** | **Google Jules (Orchestrator)** | Deliberative, state-aware, and asynchronous. Responsible for global architectural integrity, long-term planning, and managing the externalized knowledge graph. | The "Manager" / ANP (Apparently Normal Part) seeking stability.             |
+| **System 1 (Fast Thinking)** | **Gemini-CLI (Sub-Agents)**     | Reactive, exploratory, and highly localized. Instantiated dynamically to test hypotheses, run compiler loops, and query APIs in isolated sandboxes.             | The "Executor" / EP (Emotional Part) reacting rapidly to immediate stimuli. |
 
 By isolating the rapid, error-prone execution cycles of System 1 away from the stable, long-term memory of System 2, the Janus System prevents the "attention scarcity" that typically causes monolithic agents to collapse. System 2 maintains the overarching structural rules, while a swarm of System 1 sub-agents handles the granular combinatorial labor, achieving true coherence through integration rather than negation.
 
@@ -37,9 +37,9 @@ The primary methodological shift required for the Janus System is the abandonmen
 
 Context engineering for the Janus System demands hyper-automation. It requires the creation of a "Knowledge Hypergraph"—an externalized, hierarchical memory structure that allows the System 2 orchestrator to retrieve precisely the right data at the right altitude. The methodology enforces a multi-level taxonomy of context :
 
-*   **Level 0 (Source/Index Layer):** A macroscopic abstract used for topological navigation, providing file names and single-sentence summaries at approximately 100 tokens per node.
-*   **Level 1 (Factual/Structural Layer):** A syntactically compressed view extracting class names, method signatures, and imports using Abstract Syntax Tree (AST) parsers, discarding the implementation logic to reduce token weight by up to 70%.
-*   **Level 2 (Thematic/Detail Layer):** The full, uncompressed source code, injected exclusively into the isolated context of the System 1 executing sub-agent.
+- **Level 0 (Source/Index Layer):** A macroscopic abstract used for topological navigation, providing file names and single-sentence summaries at approximately 100 tokens per node.
+- **Level 1 (Factual/Structural Layer):** A syntactically compressed view extracting class names, method signatures, and imports using Abstract Syntax Tree (AST) parsers, discarding the implementation logic to reduce token weight by up to 70%.
+- **Level 2 (Thematic/Detail Layer):** The full, uncompressed source code, injected exclusively into the isolated context of the System 1 executing sub-agent.
 
 ### 2.2 The Planner-Executor Design Pattern
 
@@ -51,19 +51,19 @@ In this methodology, the Planner (Jules) consumes the Level 0 and Level 1 contex
 
 The practical instantiation of the Planner-Executor pattern is realized through the "Get Shit Done" (GSD) methodology. GSD serves as the operational protocol for the Janus System, formalizing the workflow into a highly deterministic, verifiable loop that relies on the repository's file system as its primary database. The methodology dictates a strict lifecycle :
 
-| GSD Phase | Command Trigger | Operational Methodology | Output / State Change |
-| :--- | :--- | :--- | :--- |
-| **1. Initialization** | `/gsd:new-project` | The system conducts interviews to extract constraints and spawns parallel agents to research domain requirements. | Generates `PROJECT.md`, `REQUIREMENTS.md`, and `ROADMAP.md`. |
-| **2. Discussion** | `/gsd:discuss-phase` | The Planner engages the user to refine implementation details for the current milestone without generating code. | Updates `STATE.md` with implementation decisions. |
-| **3. Planning** | `/gsd:plan-phase` | The Planner generates a strict XML blueprint defining `<files>` to modify, the `<action>` required, and the `<verify>` parameters. | Creates `task_plan.xml` in the `.planning/` directory. |
-| **4. Execution** | `/gsd:execute-phase` | The system orchestrates multiple System 1 sub-agents in parallel waves, granting each a fresh, isolated 200k context window. | Atomic commits to the codebase. |
-| **5. Verification** | `/gsd:verify-work` | The system executes the predefined verification loops (e.g., automated tests, security scans). If failures occur, debugging agents diagnose and patch autonomously. | Human acceptance testing and progression to the next milestone. |
+| GSD Phase             | Command Trigger      | Operational Methodology                                                                                                                                             | Output / State Change                                           |
+| :-------------------- | :------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------------- |
+| **1. Initialization** | `/gsd:new-project`   | The system conducts interviews to extract constraints and spawns parallel agents to research domain requirements.                                                   | Generates `PROJECT.md`, `REQUIREMENTS.md`, and `ROADMAP.md`.    |
+| **2. Discussion**     | `/gsd:discuss-phase` | The Planner engages the user to refine implementation details for the current milestone without generating code.                                                    | Updates `STATE.md` with implementation decisions.               |
+| **3. Planning**       | `/gsd:plan-phase`    | The Planner generates a strict XML blueprint defining `<files>` to modify, the `<action>` required, and the `<verify>` parameters.                                  | Creates `task_plan.xml` in the `.planning/` directory.          |
+| **4. Execution**      | `/gsd:execute-phase` | The system orchestrates multiple System 1 sub-agents in parallel waves, granting each a fresh, isolated 200k context window.                                        | Atomic commits to the codebase.                                 |
+| **5. Verification**   | `/gsd:verify-work`   | The system executes the predefined verification loops (e.g., automated tests, security scans). If failures occur, debugging agents diagnose and patch autonomously. | Human acceptance testing and progression to the next milestone. |
 
 This protocol ensures that the AI orchestrator never conducts "heavy lifting" within its main context window. Work happens in fresh sub-agent contexts, completely eradicating context degradation while maintaining mathematical precision over the project's evolution.
 
 ## 3. Designing the Command-Line Toolchain for Autonomous Orchestration
 
-The theoretical rigor of the GSD methodology is entirely dependent on the physical infrastructure that executes it. In the context of AI agent orchestration, this infrastructure is referred to as the *mise en place*—the meticulous preparation of the environment prior to execution. To structure how Google Jules interacts with its environment, a precise set of command-line tools must be designed and integrated: `mise`, `repomix`, and the `jules` CLI.
+The theoretical rigor of the GSD methodology is entirely dependent on the physical infrastructure that executes it. In the context of AI agent orchestration, this infrastructure is referred to as the _mise en place_—the meticulous preparation of the environment prior to execution. To structure how Google Jules interacts with its environment, a precise set of command-line tools must be designed and integrated: `mise`, `repomix`, and the `jules` CLI.
 
 ### 3.1 Environment Determinism and Task Routing via `mise`
 
@@ -174,25 +174,33 @@ allowed-tools: run_shell_command, read_file, write_file
 You are operating as the System 2 Orchestrator. Your primary directive is to maintain architectural integrity through strict adherence to the Planner-Executor pattern. You must NEVER write production code directly. You must orchestrate tools and sub-agents.
 
 ## Phase 1: Context Acquisition
+
 Before generating any plans, you must acquire the Level 1 Factual Digest of the repository.
+
 1. Execute `mise run context`. This utilizes `repomix` to compress the AST of the repository into `.planning/context_digest.xml`.
 2. Read the resulting XML file alongside `docs/PROJECT.md` and `docs/STATE.md`.
 3. Do not use `cat` or `ls -R` to blindly explore the directory tree.
 
 ## Phase 2: XML-Driven Planning
+
 Translate the user's requirements into an atomic execution blueprint.
+
 1. Create a new plan file at `.planning/phases/current_plan.xml` matching the schema in `references/gsd_xml_schema.md`.
 2. You must strictly define the `<files>` to be altered, the exact `<action>`, and the `<verify>` command.
 3. The `<verify>` command must ONLY invoke standard `mise` tasks (e.g., `mise run test`).
 
 ## Phase 3: System 1 Sub-Agent Delegation
+
 Delegate the execution of your XML plan to isolated worker agents.
+
 1. For each discrete task in the plan, spawn a parallel session using the Jules CLI.
 2. Execute: `jules --session "Implement <action> in <files> and run <verify>. Ensure the test passes before returning." --parallel 1`
 3. Do not proceed until the sub-agent returns the verified, passing code block.
 
 ## Phase 4: Integration and Verification Loops
+
 Treat all code returned by sub-agents as untrusted until mathematically verified.
+
 1. Inject the returned code into the target files.
 2. Immediately execute `scripts/enforce_verification_loop.py` (which triggers `mise run lint` and `mise run test`).
 3. If the verification fails, instruct the sub-agent to debug. If it passes, execute `scripts/DMCT_delta_generator.sh` to log dependency changes, update `docs/STATE.md`, and mark the plan as complete.

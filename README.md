@@ -10,20 +10,20 @@ The fundamental goal of Janus is to combat "Context Rot" through rigorous docume
 
 At the core of the project lies the dual-agent interplay:
 
-*   **System 2 (Jules): The Slow-Thinking Orchestrator**
-    Jules is deliberate, reflexive, and strategic. Operating asynchronously, Jules’ primary responsibility is maintaining the global architecture, managing the system's state (`STATE.md`, `ROADMAP.md`), and orchestrating complex plans. Jules governs the environment and does not rush into writing code.
-*   **System 1 (zeroclaw agent): The Fast-Thinking Executor**
-    Replacing the legacy Gemini-CLI, `zeroclaw` acts as the reactive sub-agent infrastructure written in Rust. System 1 is instantiated for fast, isolated, parallel execution and experimental tasks. It operates in a "YOLO" mode, generating code, running tests, and validating hypotheses through compiler output (CodeAct), protecting the main context from irrelevant noise.
+- **System 2 (Jules): The Slow-Thinking Orchestrator**
+  Jules is deliberate, reflexive, and strategic. Operating asynchronously, Jules’ primary responsibility is maintaining the global architecture, managing the system's state (`STATE.md`, `ROADMAP.md`), and orchestrating complex plans. Jules governs the environment and does not rush into writing code.
+- **System 1 (zeroclaw agent): The Fast-Thinking Executor**
+  Replacing the legacy Gemini-CLI, `zeroclaw` acts as the reactive sub-agent infrastructure written in Rust. System 1 is instantiated for fast, isolated, parallel execution and experimental tasks. It operates in a "YOLO" mode, generating code, running tests, and validating hypotheses through compiler output (CodeAct), protecting the main context from irrelevant noise.
 
 ## 2. The GSD Externalized Memory Graph
 
 To prevent hallucinations and context overload, Janus externalizes its memory into a strict Markdown graph:
 
-*   **`PROJECT.md`:** The fundamental, mostly immutable vision and architectural constraints.
-*   **`REQUIREMENTS.md`:** The detailed, hierarchical list of functional requirements.
-*   **`ROADMAP.md`:** The macroscopic timeline of phases and milestones.
-*   **`STATE.md`:** Dynamic short-term memory, updated at the end of every session. It documents immediate progress, decisions, and blockers.
-*   **`.planning/`:** A directory where all execution plans are meticulously drafted using the `task_plan.xml` template before any code is executed.
+- **`PROJECT.md`:** The fundamental, mostly immutable vision and architectural constraints.
+- **`REQUIREMENTS.md`:** The detailed, hierarchical list of functional requirements.
+- **`ROADMAP.md`:** The macroscopic timeline of phases and milestones.
+- **`STATE.md`:** Dynamic short-term memory, updated at the end of every session. It documents immediate progress, decisions, and blockers.
+- **`.planning/`:** A directory where all execution plans are meticulously drafted using the `task_plan.xml` template before any code is executed.
 
 ## 3. Episodic Memory & Learning Loops
 
@@ -37,12 +37,13 @@ Janus governs the project over the dimension of time using specific learning rhy
 
 To combat Context Rot, Janus employs sophisticated context engineering:
 
-*   **Multi-Level Digests:** Using L0 (Abstract/Topology), L1 (Structural/Signatures), and L2 (Full Content) digests to locate relevant code efficiently without flooding the context window.
-*   **DMCT:** When Jules delegates to the `zeroclaw agent` (System 1), it tailors the context to send only the precise, minimal subset (L1/L2) required for the task.
-*   **Executable Validation (Ground Truth):** Conflicts in documentation or perspectives are resolved not by guessing, but by formulating hypotheses and instructing System 1 to write and execute a test script (`CodeAct`). Compiler and test outputs serve as the absolute truth.
+- **Multi-Level Digests:** Using L0 (Abstract/Topology), L1 (Structural/Signatures), and L2 (Full Content) digests to locate relevant code efficiently without flooding the context window.
+- **DMCT:** When Jules delegates to the `zeroclaw agent` (System 1), it tailors the context to send only the precise, minimal subset (L1/L2) required for the task.
+- **Executable Validation (Ground Truth):** Conflicts in documentation or perspectives are resolved not by guessing, but by formulating hypotheses and instructing System 1 to write and execute a test script (`CodeAct`). Compiler and test outputs serve as the absolute truth.
 
 ## 5. Human Collaboration & Research
 
 Janus is autonomous but recognizes its boundaries. It strategically engages the human user:
-*   **As a Sounding Board:** For subjective business decisions or major architectural forks.
-*   **For Deep Research:** When deep domain knowledge or specific API constraints fall outside of the repository's scope, Janus relies on human-provided context instead of hallucinating capabilities.
+
+- **As a Sounding Board:** For subjective business decisions or major architectural forks.
+- **For Deep Research:** When deep domain knowledge or specific API constraints fall outside of the repository's scope, Janus relies on human-provided context instead of hallucinating capabilities.
