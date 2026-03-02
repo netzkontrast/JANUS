@@ -1,4 +1,4 @@
-name: Vercel Preview
+content = """name: Vercel Preview
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
@@ -39,3 +39,6 @@ jobs:
               repo: context.repo.repo,
               body: `🚀 **Preview Deployment bereit:** ${{ steps.deploy.outputs.url }}`
             })
+"""
+with open('.github/workflows/preview.yml', 'w') as f:
+    f.write(content)

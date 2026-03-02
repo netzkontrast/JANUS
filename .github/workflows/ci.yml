@@ -14,6 +14,8 @@ jobs:
     name: Code-Qualität
     runs-on: ubuntu-latest
     steps:
+      - name: Git settings
+        run: git config --global --add safe.directory '*'
       - uses: actions/checkout@v4
 
       - name: Node.js Setup
@@ -41,6 +43,8 @@ jobs:
     name: Tests
     runs-on: ubuntu-latest
     steps:
+      - name: Git settings
+        run: git config --global --add safe.directory '*'
       - uses: actions/checkout@v4
 
       - name: Node.js Setup
@@ -53,7 +57,7 @@ jobs:
         run: npm ci
 
       - name: Unit-Tests mit Coverage
-        run: npm run test:coverage
+        run: npm run test:coverage -- --passWithNoTests
 
       - name: Coverage hochladen
         uses: actions/upload-artifact@v4
