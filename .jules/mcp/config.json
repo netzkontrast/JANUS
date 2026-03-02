@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "jules-brain": {
+      "command": "npx",
+      "args": [
+        "tsx",
+        "./src/sqlite-mcp-server.ts"
+      ]
+    }
+  }
+}

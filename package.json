@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
     "lint": "npx tsc --noEmit",
-    "context": "npx repomix --config repomix.config.json"
+    "context": "npx repomix --config repomix.config.json",
+    "j": "tsx src/jules-cli.ts"
   },
   "keywords": [],
   "author": "Google Jules",

@@ -14,3 +14,6 @@ repomix-output.xml
 # IDE
 .vscode/
 .idea/
+
+# Database
+.jules/brain.sqlite
