@@ -1,11 +1,12 @@
 # Current State
 
 **Status:** Completed (Session 7)
-**Current Task:** Architecture design drafted for Dual AI Agent System.
-**Latest Update:** 2026-02-28
+**Current Task:** Architecture design drafted for Dual AI Agent System and repository-wide documentation sync.
+**Latest Update:** 2026-03-02
 
 **Completed Actions:**
 
+- [x] **Documentation Sync:** Cleaned up git conflict markers in STATE.md, aligned timelines in ROADMAP.md, and updated agent architecture definitions across PROJECT.md, AGENTS.md, and CLAUDE.md to reflect the transition to `zeroclaw` as the primary System 1 executor.
 - [x] **Session 7:** Synthesized theoretical physics/narrative concepts into `dual-kernel-interface.md`.
 - [x] **Session 7:** Clustered `AGENTS.md` and Drama Engine architecture into K1 (Coherence) and K0 (Erasure).
 - [x] **Session 7:** Initialized `.sessions/7/`, saved sources, updated session logs.
@@ -41,45 +42,14 @@
 - [ ] The Meso-Loop: Initiate the first 5-session review process with zeroclaw.
 - [ ] Implement the findings of the user's research task regarding token economics.
 - [ ] Install `mise` locally or in a dedicated container environment to validate execution scripts.
+- [ ] Verify `install.sh` downloads with minisign or gpg if available.
 
 **Blockers:**
 
 - Current sandbox environment lacks root privileges for full `mise` polyglot installation.
 
-**Focus:** Establishing the physical boundaries and execution engine for System 1 (Gemini-CLI) based on user research.
+**Focus:** Establishing the physical boundaries and execution engine for System 1 (`zeroclaw`) based on user research.
 
-<!-- CONFLICT:20260228050559-conflict -->
+**Recent Resolutions:**
 
-**Resolved:** 2026-02-28T05:05:59.392782Z
-**Winner:** Hypothesis A
-**Run dir:** `.conflict/runs/20260228050559-conflict`
-
-<details>
-<summary>Verdict reasoning</summary>
-
-Hypothesis A tests passed while B failed.
-
-</details>
-<!-- /CONFLICT:20260228050559-conflict -->
-
-<!-- CONFLICT:20260228050744-conflict -->
-
-**Resolved:** 2026-02-28T05:07:44.893395Z
-**Winner:** Hypothesis A
-**Run dir:** `.conflict/runs/20260228050744-conflict`
-
-<details>
-<summary>Verdict reasoning</summary>
-
-Hypothesis A tests passed while B failed.
-
-</details>
-<!-- /CONFLICT:20260228050744-conflict -->
-
-<!-- SESSION:999 -->
-
-**Session 999 Closed** (2026-02-28 05:13:22)
-
-- Status: success
-- Details: See Session_Report.md or `.sessions/999/`
-<!-- /SESSION:999 -->
+- **2026-02-28:** Resolved Hypothesis A over Hypothesis B in runs `.conflict/runs/20260228050559-conflict` and `.conflict/runs/20260228050744-conflict` due to passed tests.

@@ -1,5 +1,6 @@
 name: Vercel Preview
 env:
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
@@ -10,6 +11,7 @@ jobs:
   deploy-preview:
     name: Preview Deployment
     runs-on: ubuntu-latest
+    if: ${{ env.VERCEL_TOKEN != '' && env.VERCEL_ORG_ID != '' && env.VERCEL_PROJECT_ID != '' }}
     steps:
       - uses: actions/checkout@v4
 

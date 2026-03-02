@@ -2,7 +2,7 @@
 
 **Goal:** Establish a robust, autonomous development environment.
 
-## Phase 1: Janus Initialization (Current)
+## Phase 1: Janus Initialization (Completed)
 
 - **Infrastructure:**
   - [x] Create `.sessions/` directory and log file.
@@ -21,13 +21,19 @@
   - [x] Document DMCT protocol (draft).
   - [x] Document Hierarchical Digests concept.
 
-## Phase 2: Core Capabilities (Planned)
+## Phase 2: Core Capabilities (In Progress)
 
-- **DMCT Implementation:** Build the actual scripts/skills for context tailoring.
-- **Context Engineering:** Implement L0/L1 digest generators.
-- **Testing Infrastructure:** Set up `mise` tasks for testing.
+- **DMCT Implementation:**
+  - [x] Draft the DMCT protocol logic (`janus-orchestrator` skill).
+  - [ ] Finalize scripts for automated context tailoring.
+- **Context Engineering:**
+  - [x] Design Context Engineering strategy.
+  - [ ] Implement L0/L1 digest generators.
+- **Testing Infrastructure:**
+  - [x] Define `mise.toml`.
+  - [ ] Integrate local `mise` execution for determinism.
 
-## Phase 3: Autonomous Cycles (Future)
+## Phase 3: Autonomous Cycles (Planned)
 
 - **Macro-Loop:** Implement archival logic after 10 sessions.
-- **Meso-Loop (Session 6):** Integrate ZeroClaw (from zeroclaw-labs/zeroclaw) as the dialectic counterpart to Jules. Establish the framework for the 5-session self-evaluation review.
+- **Meso-Loop:** Integrate `zeroclaw` as the dialectic counterpart to Jules. Establish the framework for the 5-session self-evaluation review.
