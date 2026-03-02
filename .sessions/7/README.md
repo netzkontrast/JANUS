@@ -1,0 +1,3 @@
+# Session 7: Architecture Design via Dual Kernel Theory
+
+This session contains the raw sources, user interactions, and the resulting architectural synthesis `dual-kernel-interface.md` integrating the philosophical concepts of Dual Kernel Theory (K1 Coherence, K0 Erasure) and Orchestrated Objective Reduction (Orch-OR) with the multi-agent Drama Engine, applying them to the Janus GSD/DMCT repository structure.
