@@ -33,6 +33,7 @@
     "jest": "^30.2.0",
     "lint-staged": "^16.3.1",
     "prettier": "^3.8.1",
+    "@types/react-dom": "^19.2.3",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
