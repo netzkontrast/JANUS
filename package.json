@@ -1,11 +1,12 @@
 {
-  "name": "greenfield-bootstrapping",
+  "name": "janus-dashboard",
   "version": "1.0.0",
-  "description": "Greenfield bootstrapping for Google Jules environment",
+  "description": "JANUS Dual-Agent Orchestration System - Web Dashboard",
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0",
-    "lint": "npx tsc --noEmit",
-    "context": "npx repomix --config repomix.config.json",
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "j": "tsx src/jules-cli.ts"
   },
   "keywords": [],
@@ -21,18 +22,20 @@
     "better-sqlite3": "^12.6.2",
     "commander": "^14.0.3",
     "fastmcp": "^3.33.0",
-    "zod": "^4.3.6"
-  },
-  "main": "index.js",
-  "directories": {
-    "doc": "docs",
-    "test": "tests"
+    "zod": "^4.3.6",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4",
+    "lucide-react": "^0.474.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.0.2"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/netzkontrast/JANUS.git"
   },
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/netzkontrast/JANUS/issues"
   },
