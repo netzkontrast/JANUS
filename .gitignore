@@ -17,3 +17,4 @@ repomix-output.xml
 
 # Database
 .jules/brain.sqlite
+.next/
