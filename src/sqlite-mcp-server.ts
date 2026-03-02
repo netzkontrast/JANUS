@@ -3,6 +3,8 @@ import Database from "better-sqlite3";
 import { z } from "zod";
 import path from "node:path";
 import fs from "node:fs/promises";
+import { OpenRouter } from "@openrouter/sdk";
+
 
 // Configuration
 const JULES_DIR = path.resolve('.jules');
@@ -111,6 +113,42 @@ server.addTool({
             db.close();
         }
     }
+});
+
+
+server.addTool({
+  name: "chat_with_model",
+  description: "Chat with a model using OpenRouter.",
+  parameters: z.object({
+    model: z.string().describe("The model to use, e.g. openai/gpt-4o-mini"),
+    message: z.string().describe("The message to send"),
+  }),
+  execute: async (args) => {
+    const openRouter = new OpenRouter({
+      apiKey: process.env.OPENROUTER_API_KEY,
+    });
+
+    try {
+      const result = await openRouter.chat.send({
+        chatGenerationParams: {
+          messages: [
+            {
+              role: "user",
+              content: args.message,
+            },
+          ],
+          model: args.model,
+          stream: false,
+          temperature: 0.7,
+          topP: 1.0,
+        }
+      });
+
+      return JSON.stringify(result);
+    } catch (e: any) {
+      throw new Error(`OpenRouter error: ${e.message}`);
+    }
+  },
 });
 
 server.start({
