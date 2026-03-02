@@ -26,45 +26,46 @@ error() {
   echo "$@" >&2
   exit 1
 }
+
+warn() {
+  echo "$@" >&2
+}
 #endregion
 
 #region environment setup
 get_os() {
-  os="$(uname -s)"
-  if [ "$os" = Darwin ]; then
-    echo "macos"
-  elif [ "$os" = Linux ]; then
-    echo "linux"
-  else
-    error "unsupported OS: $os"
-  fi
+  case "$(uname -s)" in
+  Darwin) echo "macos" ;;
+  Linux) echo "linux" ;;
+  *) error "unsupported OS: $(uname -s)" ;;
+  esac
 }
 
 get_arch() {
-  musl=""
+  os_libc=""
   if type ldd >/dev/null 2>/dev/null; then
-    if [ "${MISE_INSTALL_MUSL-}" = "1" ] || [ "${MISE_INSTALL_MUSL-}" = "true" ]; then
-      musl="-musl"
-    elif [ "$(uname -o)" = "Android" ]; then
-      # Android (Termux) always uses musl
-      musl="-musl"
-    else
-      libc=$(ldd /bin/ls | grep 'musl' | head -1 | cut -d ' ' -f1)
-      if [ -n "$libc" ]; then
-        musl="-musl"
-      fi
-    fi
+    case "${MISE_INSTALL_MUSL-}" in
+    1 | true) os_libc="-musl" ;;
+    *)
+      case "$(uname -o 2>/dev/null)" in
+      Android) os_libc="-musl" ;;
+      *)
+        if ldd /bin/ls 2>/dev/null | grep -q 'musl'; then
+          os_libc="-musl"
+        fi
+        ;;
+      esac
+      ;;
+    esac
   fi
-  arch="$(uname -m)"
-  if [ "$arch" = x86_64 ]; then
-    echo "x64$musl"
-  elif [ "$arch" = aarch64 ] || [ "$arch" = arm64 ]; then
-    echo "arm64$musl"
-  elif [ "$arch" = armv7l ]; then
-    echo "armv7$musl"
-  else
-    error "unsupported architecture: $arch"
-  fi
+
+  hw_arch="$(uname -m)"
+  case "$hw_arch" in
+  x86_64) echo "x64$os_libc" ;;
+  aarch64 | arm64) echo "arm64$os_libc" ;;
+  armv7l) echo "armv7$os_libc" ;;
+  *) error "unsupported architecture: $hw_arch" ;;
+  esac
 }
 
 get_ext() {
@@ -130,64 +131,25 @@ get_checksum() {
     checksum_macos_x86_64_zstd="56d0623ec38cb84f95fcaaf0ac7398f30178481d0ed553adc88e7f088d0f05bb  ./mise-v2026.2.22-macos-x64.tar.zst"
     checksum_macos_arm64_zstd="b76ba794144ccc8ce64b5fb848845c470eb739b5202cfd7d12c32d5326b6c91f  ./mise-v2026.2.22-macos-arm64.tar.zst"
 
-    # TODO: refactor this, it's a bit messy
-    if [ "$ext" = "tar.zst" ]; then
-      if [ "$os" = "linux" ]; then
-        if [ "$arch" = "x64" ]; then
-          echo "$checksum_linux_x86_64_zstd"
-        elif [ "$arch" = "x64-musl" ]; then
-          echo "$checksum_linux_x86_64_musl_zstd"
-        elif [ "$arch" = "arm64" ]; then
-          echo "$checksum_linux_arm64_zstd"
-        elif [ "$arch" = "arm64-musl" ]; then
-          echo "$checksum_linux_arm64_musl_zstd"
-        elif [ "$arch" = "armv7" ]; then
-          echo "$checksum_linux_armv7_zstd"
-        elif [ "$arch" = "armv7-musl" ]; then
-          echo "$checksum_linux_armv7_musl_zstd"
-        else
-          warn "no checksum for $os-$arch"
-        fi
-      elif [ "$os" = "macos" ]; then
-        if [ "$arch" = "x64" ]; then
-          echo "$checksum_macos_x86_64_zstd"
-        elif [ "$arch" = "arm64" ]; then
-          echo "$checksum_macos_arm64_zstd"
-        else
-          warn "no checksum for $os-$arch"
-        fi
-      else
-        warn "no checksum for $os-$arch"
-      fi
-    else
-      if [ "$os" = "linux" ]; then
-        if [ "$arch" = "x64" ]; then
-          echo "$checksum_linux_x86_64"
-        elif [ "$arch" = "x64-musl" ]; then
-          echo "$checksum_linux_x86_64_musl"
-        elif [ "$arch" = "arm64" ]; then
-          echo "$checksum_linux_arm64"
-        elif [ "$arch" = "arm64-musl" ]; then
-          echo "$checksum_linux_arm64_musl"
-        elif [ "$arch" = "armv7" ]; then
-          echo "$checksum_linux_armv7"
-        elif [ "$arch" = "armv7-musl" ]; then
-          echo "$checksum_linux_armv7_musl"
-        else
-          warn "no checksum for $os-$arch"
-        fi
-      elif [ "$os" = "macos" ]; then
-        if [ "$arch" = "x64" ]; then
-          echo "$checksum_macos_x86_64"
-        elif [ "$arch" = "arm64" ]; then
-          echo "$checksum_macos_arm64"
-        else
-          warn "no checksum for $os-$arch"
-        fi
-      else
-        warn "no checksum for $os-$arch"
-      fi
-    fi
+    case "$os-$arch-$ext" in
+    linux-x64-tar.zst) echo "$checksum_linux_x86_64_zstd" ;;
+    linux-x64-musl-tar.zst) echo "$checksum_linux_x86_64_musl_zstd" ;;
+    linux-arm64-tar.zst) echo "$checksum_linux_arm64_zstd" ;;
+    linux-arm64-musl-tar.zst) echo "$checksum_linux_arm64_musl_zstd" ;;
+    linux-armv7-tar.zst) echo "$checksum_linux_armv7_zstd" ;;
+    linux-armv7-musl-tar.zst) echo "$checksum_linux_armv7_musl_zstd" ;;
+    macos-x64-tar.zst) echo "$checksum_macos_x86_64_zstd" ;;
+    macos-arm64-tar.zst) echo "$checksum_macos_arm64_zstd" ;;
+    linux-x64-tar.gz) echo "$checksum_linux_x86_64" ;;
+    linux-x64-musl-tar.gz) echo "$checksum_linux_x86_64_musl" ;;
+    linux-arm64-tar.gz) echo "$checksum_linux_arm64" ;;
+    linux-arm64-musl-tar.gz) echo "$checksum_linux_arm64_musl" ;;
+    linux-armv7-tar.gz) echo "$checksum_linux_armv7" ;;
+    linux-armv7-musl-tar.gz) echo "$checksum_linux_armv7_musl" ;;
+    macos-x64-tar.gz) echo "$checksum_macos_x86_64" ;;
+    macos-arm64-tar.gz) echo "$checksum_macos_arm64" ;;
+    *) warn "no checksum for $os-$arch" ;;
+    esac
   else
     if command -v curl >/dev/null 2>&1; then
       debug ">" curl -fsSL "$url"
