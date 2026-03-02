@@ -8,6 +8,7 @@ on:
 
 jobs:
   deploy-preview:
+    if: env.VERCEL_ORG_ID != '' && env.VERCEL_PROJECT_ID != ''
     name: Preview Deployment
     runs-on: ubuntu-latest
     steps:

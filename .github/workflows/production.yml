@@ -8,6 +8,7 @@ on:
 
 jobs:
   deploy-production:
+    if: env.VERCEL_ORG_ID != '' && env.VERCEL_PROJECT_ID != ''
     name: Production Deployment
     runs-on: ubuntu-latest
     steps:

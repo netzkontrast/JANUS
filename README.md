@@ -12,8 +12,8 @@ At the core of the project lies the dual-agent interplay:
 
 - **System 2 (Jules): The Slow-Thinking Orchestrator**
   Jules is deliberate, reflexive, and strategic. Operating asynchronously, Jules’ primary responsibility is maintaining the global architecture, managing the system's state (`STATE.md`, `ROADMAP.md`), and orchestrating complex plans. Jules governs the environment and does not rush into writing code.
-- **System 1 (zeroclaw agent): The Fast-Thinking Executor**
-  Replacing the legacy Gemini-CLI, `zeroclaw` acts as the reactive sub-agent infrastructure written in Rust. System 1 is instantiated for fast, isolated, parallel execution and experimental tasks. It operates in a "YOLO" mode, generating code, running tests, and validating hypotheses through compiler output (CodeAct), protecting the main context from irrelevant noise.
+- **System 1 (Claude Code): The Fast-Thinking Executor**
+  Claude Code acts as the reactive sub-agent infrastructure. System 1 is instantiated for fast, isolated, parallel execution and experimental tasks. It operates in a "YOLO" mode, generating code, running tests, and validating hypotheses through compiler output (CodeAct), protecting the main context from irrelevant noise.
 
 ## 2. The GSD Externalized Memory Graph
 
@@ -38,7 +38,7 @@ Janus governs the project over the dimension of time using specific learning rhy
 To combat Context Rot, Janus employs sophisticated context engineering:
 
 - **Multi-Level Digests:** Using L0 (Abstract/Topology), L1 (Structural/Signatures), and L2 (Full Content) digests to locate relevant code efficiently without flooding the context window.
-- **DMCT:** When Jules delegates to the `zeroclaw agent` (System 1), it tailors the context to send only the precise, minimal subset (L1/L2) required for the task.
+- **DMCT:** When Jules delegates to the Claude Code (System 1), it tailors the context to send only the precise, minimal subset (L1/L2) required for the task.
 - **Executable Validation (Ground Truth):** Conflicts in documentation or perspectives are resolved not by guessing, but by formulating hypotheses and instructing System 1 to write and execute a test script (`CodeAct`). Compiler and test outputs serve as the absolute truth.
 
 ## 5. Human Collaboration & Research

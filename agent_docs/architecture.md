@@ -1,37 +1,35 @@
-# JANUS Architektur — Detailliert
+# JANUS Architecture — Detailed
 
-## Dual-Cognition Modell
-JANUS implementiert ein Planner-Executor Design Pattern:
+## Dual-Cognition Model
+JANUS implements a Planner-Executor Design Pattern:
 
-### System 2 — Der Kohärenz-Kernel (AEGIS)
-- Verkörpert durch Google Jules (asynchron, cloud-basiert)
-- Verantwortlich für: globale architektonische Integrität,
-  Langzeit-Planung, externalisiertes Wissensmanagement
-- Verwendet `repomix` für statische XML-Digests des Dateisystems
-- Schreibt NIEMALS Produktionscode direkt
+### System 2 — The Coherence Kernel (AEGIS)
+- Embodied by Google Jules (asynchronous, cloud-based)
+- Responsible for: global architectural integrity, long-term planning, externalized knowledge management
+- Uses `repomix` for static XML digests of the file system
+- NEVER writes production code directly
 
-### System 1 — Der Kollaps-Kernel (Juna)
-- Verkörpert durch Claude Code (lokaler Executor)
-- Verantwortlich für: schnelle Implementierung, Code-Generierung,
-  lokale Refactorings, Test-Erstellung
-- Arbeitet innerhalb der Grenzen der SKILL.md Delegierungen
+### System 1 — The Collapse Kernel (Claude Code)
+- Embodied by Claude Code (local executor)
+- Responsible for: fast implementation, code generation, local refactorings, test creation
+- Operates within the boundaries of the SKILL.md delegations
 
-### Kommunikations-Protokoll
-- System 2 delegiert via SKILL.md an System 1
-- System 1 aktualisiert STATE.md nach Abschluss
-- PROJECT.md bleibt als konstante Referenz
+### Communication Protocol
+- System 2 delegates via SKILL.md to System 1
+- System 1 updates STATE.md upon completion
+- PROJECT.md remains as a constant reference
 
 ## Tech-Stack Details
 - **Framework**: Next.js 15 (App Router)
 - **UI**: React 19 + Tailwind CSS + shadcn/ui
-- **KI-SDK**: Vercel AI SDK (ai package)
-- **Protokoll**: Model Context Protocol (MCP)
+- **AI-SDK**: Vercel AI SDK (ai package)
+- **Protocol**: Model Context Protocol (MCP)
 - **Toolchain**: mise (polyglot version manager)
 - **Deployment**: Vercel (Serverless + Edge)
 
-## Domain-Modell: Roman-Entwicklung
-- Charaktere (Properties, Beziehungen, Entwicklungsbögen)
-- Plot-Stränge (Timeline, Verflechtungen, Spannungsbögen)
-- Kapitel (Struktur, Szenen, POV-Tracking)
-- Welt-Building (Orte, Regeln, Hintergrund)
-- KI-Assistenz (Vorschläge, Konsistenz-Checks, Stil-Analyse)
+## Domain Model: Novel Development
+- Characters (Properties, relationships, development arcs)
+- Plot Threads (Timeline, interweavings, tension arcs)
+- Chapters (Structure, scenes, POV tracking)
+- World-Building (Locations, rules, background)
+- AI Assistance (Suggestions, consistency checks, style analysis)

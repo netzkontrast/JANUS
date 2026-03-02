@@ -1,12 +1,12 @@
 # JANUS: Dual-Agent Orchestration System
 
 **Vision:**
-Janus is an autonomous, self-orchestrating software development environment designed for "Greenfield" projects. It leverages a dual-agent architecture (System 2: Google Jules, System 1: Gemini-CLI) to solve complex coding tasks with high reliability and minimal context decay.
+Janus is an autonomous, self-orchestrating software development environment designed for "Greenfield" projects. It leverages a dual-agent architecture (System 2: Google Jules, System 1: Claude Code) to solve complex coding tasks with high reliability and minimal context decay.
 
 **Core Philosophy:**
 
 - **System 2 (Jules):** Slow, deliberative, strategic. Manages architecture, planning, and global state.
-- **System 1 (Gemini-CLI):** Fast, reactive, experimental. Executes isolated tasks, validates hypotheses with code, and tailors context.
+- **System 1 (Claude Code):** Fast, reactive, experimental. Executes isolated tasks, validates hypotheses with code, and tailors context.
 - **Transactional Memory:** All actions are logged immutably.
 - **Get Shit Done (GSD):** Strict separation of planning and execution.
 

@@ -18,19 +18,8 @@ The structure **must** follow this exact format:
 ```
 
 ## 2. Naming Conventions
+- Always prefix directories correctly.
+- Ensure the state file and logs are continually updated to prevent Context Rot.
 
-- **Session Folders:** Must be strictly named `session_<N>`, where `<N>` is the sequential number (e.g., `session_1`, `session_2`, `session_3`).
-- **Prompt File:** Always named `user.md` inside the `sources/` subdirectory of the session.
-- **Audit Trail:** Always named `Jules.md` (or the respective agent's name) directly within the session folder.
-
-## 3. Workflow for New Sessions
-
-1.  **Identify Sequence:** Determine the next available session number by inspecting `.sessions/`.
-2.  **Create Skeleton:** Create `.sessions/session_<N>/sources/`.
-3.  **Capture Prompt:** Write the user's initial prompt into `.sessions/session_<N>/sources/user.md`.
-4.  **Execute Task:** Perform the requested work.
-5.  **Audit Logging:** Write a chronological summary of actions taken into `.sessions/session_<N>/Jules.md`.
-6.  **Global Log Update:** Append a single JSON object to `.sessions/session_log.jsonl` summarizing the session outcome:
-    `{"session_id": "session_<N>", "action": "Brief summary", "status": "completed"}`
-
-These instructions are mandatory and must be executed as part of the initial planning phase for every new task.
+## 3. Storage Rules
+- External context, logs, and interaction trails should not pollute the main repository. Use `.sessions/` effectively to structure all planning and execution details.
