@@ -17,3 +17,17 @@ repomix-output.xml
 
 # Database
 .jules/brain.sqlite
+# Claude Code persönliche Dateien
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Environment
+.env.local
+.env.production.local
+
+# Next.js
+.next/
+out/
+
+# Vercel
+.vercel/
