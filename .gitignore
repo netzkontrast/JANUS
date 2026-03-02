@@ -14,10 +14,10 @@ repomix-output.xml
 # IDE
 .vscode/
 .idea/
-.idea/
 
 # Database
 .jules/brain.sqlite
+
 # Claude Code persönliche Dateien
 CLAUDE.local.md
 .claude/settings.local.json
