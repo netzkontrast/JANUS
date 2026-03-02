@@ -1,0 +1,6 @@
+{
+  "name": "janus-orchestrator",
+  "description": "Master protocol for orchestrating the dual-cognition (Janus) multi-agent workflow. Use this skill to execute the Get Shit Done (GSD) XML planning phase, manage context via repomix, and delegate execution to sub-agents via the jules CLI.",
+  "version": "1.0",
+  "author": "Jules (System 2)"
+}

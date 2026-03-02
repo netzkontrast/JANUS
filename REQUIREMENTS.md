@@ -16,7 +16,7 @@
   - [x] Create `/.private/jules/inbox/`.
   - [x] Create `archive/`.
 - **Skills:**
-  - [x] Create `/skills/create_skill/SKILL.md` template.
+  - [x] Create `/skills/create-skill/SKILL.md` template.
 - **Documentation:**
   - [x] Document DMCT protocol (draft).
   - [x] Document Hierarchical Digests concept.

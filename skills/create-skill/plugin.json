@@ -1,0 +1,6 @@
+{
+  "name": "create-skill",
+  "description": "Template for creating new Agent Skills. Defines the standard structure and required metadata. Use this when you want to package a new capability.",
+  "version": "1.0",
+  "author": "Jules (System 2)"
+}

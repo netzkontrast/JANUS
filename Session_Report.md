@@ -1,30 +1,15 @@
-# Session 7 Report
+# Session Report
 
-**Date:** $(date "+%Y-%m-%d %H:%M:%S")
-**Status:** SUCCESS
+## Overview
+- **Goal:** Simplify and refactor agent skills.
+- **Status:** Completed
 
-## 1. Goal
+## Architecture Updates
+- Standardized skill directory names to use kebab-case (`create-skill`, `scientific-critical-thinking`).
+- Updated references in `REQUIREMENTS.md` to reflect the new directory names.
+- Generated `plugin.json` for all skills (`create-skill`, `janus-orchestrator`, `reflection-logic`, `scientific-critical-thinking`) by extracting metadata from their respective `SKILL.md` files. This satisfies the requirement that each plugin must have a `plugin.json`.
+- Drastically simplified the `SKILL.md` for `scientific-critical-thinking` from ~24KB to ~1.7KB, removing overly verbose frameworks and retaining only the core purpose, usage conditions, and core framework.
+- Fixed a broken `package.json` and installed missing `eslint` dependencies to allow `npm run lint` and `npm run build` to execute successfully.
 
-Analyze the provided conceptual text regarding a "Dual AI Agent System" based on Dual Kernel Theory, Orch-OR, and the Narrative Context Protocol. Reflect on this framework and write an architecture design inspired by `drama-engine.com`, clustering ideas from this repository (`AGENTS.md`) into the two kernels ($K_1$ and $K_0$) and detailing their interaction.
-
-## 2. Actions Taken
-
-- Initialized Session 7 directory structure (`.sessions/7/sources/`, `Jules.md`, `user.md`, `README.md`).
-- Saved the raw conceptual text to `.sessions/7/sources/The_Computational_Interface.md`.
-- Read and analyzed `AGENTS.md` and the `drama-engine.com` website.
-- Drafted a comprehensive architectural design document (`dual-kernel-interface.md`) in the root directory.
-- Clustered Concepts:
-  - Mapped System 2 (Jules), GSD Memory Graph, and Drama Engine Companions/Contexts into $K_1$ (Coherence Kernel).
-  - Mapped System 1 (Gemini-CLI), CodeAct test execution, and autoregressive LLM text generation into $K_0$ (Erasure Kernel).
-- Defined the "Coherence Protocol" at the interface of these domains.
-- Listed strategic architectural decisions (Entscheidungen) and traced potential conflicts.
-- Appended Session 7 status to `STATE.md` to preserve historical integrity.
-
-## 3. Findings / Blockers
-
-- **Findings:** The theoretical concept of thermodynamics applied to LLM generation maps exceptionally well to the Janus Dual-Agent architecture (System 1 vs System 2) detailed in our `AGENTS.md`. The Drama Engine provides the practical software mechanisms (Reply Functions, Context Objects, Companions) to implement the abstract boundaries.
-- **Blockers:** None encountered during the conceptual drafting phase.
-
-## 4. Next Steps
-
-- Review the architectural decisions outlined in `dual-kernel-interface.md` with the user to begin practical implementation of the proposed Dual Agent System.
+## Next Steps
+- Verify if `npx skills add` or similar commands need to be run to update symlinks in `.agents` and `.claude` given the directory name changes.

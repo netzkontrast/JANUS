@@ -1,4 +1,4 @@
-name: Claude Code Review
+content = """name: Claude Code Review
 on:
   issue_comment:
     types: [created]
@@ -56,3 +56,6 @@ jobs:
             5. Konsistenz mit dem Projekt-Stil (siehe CLAUDE.md)
             Fasse die Ergebnisse als strukturiertes Review zusammen.
           claude_args: "--max-turns 5"
+"""
+with open('.github/workflows/claude.yml', 'w') as f:
+    f.write(content)

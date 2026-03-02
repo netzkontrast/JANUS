@@ -1,4 +1,11 @@
-{
+import json
+import re
+
+with open('package.json', 'r') as f:
+    content = f.read()
+
+# Fix the broken json
+fixed_content = """{
   "name": "janus-dashboard",
   "version": "1.0.0",
   "description": "JANUS Dual-Agent Orchestration System - Web Dashboard",
@@ -8,12 +15,12 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "format": "prettier --write \\"src/**/*.{ts,tsx,js,jsx,json,css,md}\\"",
+    "format:check": "prettier --check \\"src/**/*.{ts,tsx,js,jsx,json,css,md}\\"",
     "typecheck": "tsc --noEmit",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage --passWithNoTests",
+    "test:coverage": "jest --coverage",
     "test:e2e": "playwright test",
     "ci": "npm run lint && npm run typecheck && npm run test && npm run build",
     "prepare": "husky",
@@ -23,7 +30,6 @@
   "author": "Google Jules",
   "license": "ISC",
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.4",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/node": "^22.19.13",
@@ -60,4 +66,8 @@
     "url": "https://github.com/netzkontrast/JANUS/issues"
   },
   "homepage": "https://github.com/netzkontrast/JANUS#readme"
-}
+}"""
+
+with open('package.json', 'w') as f:
+    f.write(fixed_content)
+print("Fixed package.json")
